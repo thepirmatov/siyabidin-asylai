@@ -104,14 +104,8 @@
   .envelope-cover{
     position:fixed; inset:0;
     z-index:200;
-    display:flex; flex-direction:column; align-items:center;
-    justify-content:center;
-    justify-content:safe center;
-    gap:3vh;
-    padding:4vh 1.6rem;
     text-align:center;
-    overflow-x:hidden;
-    overflow-y:auto;
+    overflow:hidden;
     background:var(--maroon-950);
     transition:opacity .7s ease;
   }
@@ -128,28 +122,31 @@
     clip-path:polygon(0 100%, 100% 100%, 50% 50%);
   }
   .envelope-cover .intro-eyebrow{color:var(--gold-300); font-size:clamp(.7rem, 2.2vh, 1rem); margin:0 0 .6em;}
-  .envelope-cover .intro-word{height:min(8vh, 9vw); width:auto; max-width:78vw; display:block; margin:0 auto;}
+  .envelope-cover .intro-word{height:min(8vh, 9vw); width:auto; max-width:60vw; display:block; margin:0 auto;}
   .envelope-cover .top-group,
   .envelope-cover .bottom-group{
-    position:relative; z-index:2;
+    position:absolute; left:50%; z-index:2;
     display:flex; flex-direction:column; align-items:center; gap:.6em;
   }
+  .envelope-cover .top-group{top:11%; transform:translateX(-50%);}
+  .envelope-cover .bottom-group{top:73%; transform:translateX(-50%);}
 
   .wax-seal-btn{
-    position:relative; z-index:2;
-    height:min(17vh, 19vw);
+    position:absolute; top:50%; left:50%; z-index:3;
+    height:min(15vh, 17vw);
     width:auto;
     border:none; background:none; padding:0; cursor:pointer;
+    transform:translate(-50%,-50%);
     transition:transform .5s ease, opacity .5s ease;
   }
-  .wax-seal-btn img{height:100%; width:auto; max-width:42vw; display:block; filter:drop-shadow(0 10px 18px rgba(0,0,0,.45));}
+  .wax-seal-btn img{height:100%; width:auto; max-width:38vw; display:block; filter:drop-shadow(0 10px 18px rgba(0,0,0,.45));}
 
-  .crest{height:min(28vh, 60vw); width:auto; max-width:80vw; margin:0 auto; display:block;}
+  .crest{height:min(22vh, 42vw); width:auto; max-width:56vw; margin:0 auto; display:block;}
 
   .envelope-cover.opening{opacity:0; pointer-events:none;}
   .envelope-cover.opening .flap-top{transform:translateY(-115%); opacity:0;}
   .envelope-cover.opening .flap-bottom{transform:translateY(115%); opacity:0;}
-  .envelope-cover.opening .wax-seal-btn{transform:scale(.7); opacity:0;}
+  .envelope-cover.opening .wax-seal-btn{transform:translate(-50%,-50%) scale(.7); opacity:0;}
   .envelope-cover.hidden{display:none;}
   @media (prefers-reduced-motion:reduce){
     .envelope-cover{display:none;}
