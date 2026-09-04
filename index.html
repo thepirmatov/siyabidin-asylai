@@ -274,6 +274,7 @@
   }
 
   table.calendar{
+    table-layout:fixed;
     border-collapse:collapse;
     margin:2rem auto 1.4rem;
     width:100%;
@@ -282,16 +283,18 @@
   table.calendar th{
     font-family:'Forum', Georgia, serif;
     font-weight:400;
-    letter-spacing:.1em;
+    letter-spacing:.05em;
     font-size:.7rem;
     color:var(--gold-300);
     padding-bottom:.8rem;
     border-bottom:1px solid rgba(218,185,126,.35);
+    text-align:center;
   }
   table.calendar td{
     padding:.5rem 0;
     font-size:.92rem;
     color:rgba(250,243,230,.85);
+    text-align:center;
   }
   table.calendar td.today span{
     display:inline-flex;
@@ -312,8 +315,16 @@
 
   /* ---- venue ---- */
   .venue-heading{font-size:2.4rem; color:var(--ink-900); font-family:'Great Vibes', cursive;}
+  .venue-label{
+    margin-top:1.4rem;
+    font-family:'Forum', Georgia, serif;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    font-size:.75rem;
+    color:var(--gold-400);
+  }
   .venue-name{
-    margin-top:1.2rem;
+    margin-top:.3rem;
     font-family:'Great Vibes', cursive;
     font-size:2.4rem;
     color:#8a1f2f;
@@ -598,6 +609,7 @@
   <section class="sec-cream venue">
     <p class="eyebrow on-cream reveal">Орун жана убакыт</p>
     <h2 class="venue-heading reveal">Башталышы — 15:00</h2>
+    <p class="venue-label reveal">Ресторан</p>
     <p class="venue-name reveal">«Барчын»</p>
     <p class="venue-addr reveal">Талас облусу, Бакай-Ата району<br>Манас көчөсү, 76а</p>
     <a class="btn reveal" href="https://go.2gis.com/RnbW8" target="_blank" rel="noopener">Картадан көрүү</a>
